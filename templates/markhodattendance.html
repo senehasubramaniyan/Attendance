@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <title>Sign in</title>
+  <style>
+            body
+            {
+                width:auto;
+                background-image:url('https://st4.depositphotos.com/4315033/21060/v/1600/depositphotos_210608780-stock-illustration-color-abstract-blurred-backgrounds-defocused.jpg');
+            }
+            nav
+            {
+                background-color:blue;
+                width:auto;
+            }
+            nav a
+            {
+                font-family:Verdana;
+                background-color: blue;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            h3
+            {
+                text-align:center;
+                font-size:30px;
+                font-family:"Arial";
+                font-weight:bold;
+                color:#606;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 style="text-align:center">WELCOME ADMIN</h3>
+        <br>
+        <nav>
+            <a href="/checking">Home</a>
+            <a href="/viewhodattendance">Attendance</a>
+            <a href="/markinghodattendance">MARK HOD ATTENDANCE</a>
+            <a href="/addhod">ADD HOD</a>
+            <a href="/viewhod">VIEW HOD</a>
+            <a href="/logoutadmin">LOGOUT</a>
+        </nav>
+        <br><br>
+  <div class="main">
+    <p class="sign" align="center">MARK THE ATTENDANCE FOR TUTOR</p>
+      {% for row in rows%}
+    <form class="form1" method="post" action="/markhodattendance" >
+      <input class="un " type="text" align="center" placeholder="id" name="id" value='{{row["id"]}}'>
+        <input class="un " type="text" align="center" placeholder="id" name="id" value='{{row["name"]}}'>
+      <input class="pass" type="text" align="center" placeholder="attendance" name="attendance" value='{{row["attendance"]}}'>
+        <button type="submit" class="submit">DONE</button>
+    </form>
+      {% endfor %}
+      <a href="/">OK</a>
+    </div>
+</body>
+
+</html>

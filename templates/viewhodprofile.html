@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOD Attendance</title>
+       <!-- <style>
+            body
+            {
+                width:auto;
+                background-image:url('https://longreadsblog.files.wordpress.com/2019/01/GettyImages-955854460.jpg?w=1200')
+            }
+            h3
+            {
+                text-align:center;
+                font-size:30px;
+                font-family:"Arial";
+                font-weight:bold;
+                color:#606;
+            }
+            h4
+            {
+                text-align:center;
+                font-family:"Verdana";
+                font-weight:bold;
+                color:#706;
+            }
+            table,td,tr
+            {
+                text-align:center;
+                border-collapse:collapse;
+            }
+            a
+            {
+                font-family:Verdana;
+                background-color: green;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+        </style>-->
+        <style>
+        body{
+        background-image:url(' https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment:fix;
+
+        }
+        nav
+            {
+                background-color:blue;
+                width:auto;
+            }
+            nav a
+            {
+                font-family:Verdana;
+                background-color: blue;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+        h1{
+        text-align:center;
+        color:black;
+        }
+        .button {
+        background-color: lightgreen;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+       }
+       a{
+       text-decoration: none;
+       color:black;
+       }
+    </style>
+    </head>
+    <body>
+     <h1>Welcome HOD of {{dept}}</h1>
+    <nav>
+            <a href="/check">HOME</a>
+            <a href="/addtutor">ADDTUTOR</a>
+            <a href="/viewtutor">VIEWTUTOR</a>
+            <a href="/viewtutorattendance">VIEWTUTORATTENDANCE</a>
+            <a href="/markingtutorattendance">MARKTUTORATTENDANCE</a>
+            <a href="/hodprofile">PROFILE</a>
+            <a href="/logouthod">LOGOUT</a>
+        </nav>
+        <br>
+        <!--<h4>PROFILE View</h4>-->
+        <br>
+        <table border="3">
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>QUALIFICATION</td>
+            <td>ATTENDANCE</td>
+        </tr>
+        {% for row in rows%}
+        <tr>
+            <td>{{row["id"]}}</td>
+            <td>{{row["NAME"]}}</td>
+            <td>{{row["QUALIFICATION"]}}</td>
+            <td>{{row["ATTENDANCE"]}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        <br><br>
+    </body>
+</html>

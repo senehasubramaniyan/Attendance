@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOD View</title>
+        <!--<style>
+            body
+            {
+                width:auto;
+                background-image:url('https://longreadsblog.files.wordpress.com/2019/01/GettyImages-955854460.jpg?w=1200');
+            }
+            nav
+            {
+                background-color:blue;
+                width:auto;
+            }
+            nav a
+            {
+                font-family:Verdana;
+                background-color: blue;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            h3
+            {
+                text-align:center;
+                font-size:30px;
+                font-family:"Arial";
+                font-weight:bold;
+                color:#606;
+            }
+        </style>-->
+         <style>
+        body{
+        background-image:url(' https://images.unsplash.com/photo-1523821741446-edb2b68bb7a0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment:fix;
+
+        }
+        nav
+            {
+                background-color:blue;
+                width:auto;
+            }
+            nav a
+            {
+                font-family:Verdana;
+                background-color: blue;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+        h1{
+        text-align:center;
+        color:black;
+        }
+        .button {
+        background-color: lightgreen;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+       }
+       a{
+       text-decoration: none;
+       color:black;
+       }
+    </style>
+
+    </head>
+    <body>
+    <h1>Welcome HOD of {{dept}}</h1>
+        <!--<h3 style="text-align:center">Tutor Zone</h3>
+        <br>
+        <nav>
+            <a href="/check">Home</a>
+            <a href="/viewtutorattendance">Attendance</a>
+        </nav>
+        <br><br>
+        <div style="align:center">-->
+        <nav>
+            <a href="/check">HOME</a>
+            <a href="/addtutor">ADDTUTOR</a>
+            <a href="/viewtutor">VIEWTUTOR</a>
+            <a href="/viewtutorattendance">VIEWTUTORATTENDANCE</a>
+            <a href="/markingtutorattendance">MARKTUTORATTENDANCE</a>
+            <a href="/hodprofile">PROFILE</a>
+            <a href="/logouthod">LOGOUT</a>
+        </nav>
+        <br><br>
+            <table border="3">
+            <tr>
+                <td>ID</td>
+                <td>NAME</td>
+                <td>QUALIFICATION</td>
+                <td>ADDRESS</td>
+            </tr>
+            {% for row in rows %}
+            <tr>
+                <td>{{row["id"]}}</td>
+                <td>{{row["NAME"]}}</td>
+                <td>{{row["QUALIFICATION"]}}</td>
+                <td>{{row["ADDRESS"]}}</td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+        </body>
+</html>

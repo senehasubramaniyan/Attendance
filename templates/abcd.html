@@ -1,0 +1,11 @@
+<div class="main">
+      {% for row in rows%}
+    <form class="form1" method="post" action="/updatemark" >
+      <input class="un " type="text" align="center" placeholder="id" name="id" value='{{row["id"]}}'>
+        <input class="un " type="text" align="center" placeholder="subject" name="subject" value='{{row["subject"]}}'>
+      <input class="pass" type="text" align="center" placeholder="mark" name="mark" value='{{row["mark"]}}'>
+        <button type="submit" class="submit">DONE</button>
+    </form>
+      {% endfor %}
+    <a href="/viewclass">OK</a>
+</div>

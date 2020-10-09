@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOD ATTENDANCE</title>
+        <style>
+            body
+            {
+                width:auto;
+                background-image:url('https://st4.depositphotos.com/4315033/21060/v/1600/depositphotos_210608780-stock-illustration-color-abstract-blurred-backgrounds-defocused.jpg');
+            }
+            nav
+            {
+                background-color:blue;
+                width:auto;
+            }
+            nav a
+            {
+                font-family:Verdana;
+                background-color: blue;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+            }
+            h3
+            {
+                text-align:center;
+                font-size:30px;
+                font-family:"Arial";
+                font-weight:bold;
+                color:#606;
+            }
+        </style>
+    </head>
+    <body>
+        <h3 style="text-align:center">WELCOME ADMIN</h3>
+        <br>
+        <nav>
+            <a href="/checking">Home</a>
+            <a href="/viewhodattendance">Attendance</a>
+            <a href="/markinghodattendance">MARK HOD ATTENDANCE</a>
+            <a href="/addhod">ADD HOD</a>
+            <a href="/viewhod">VIEW HOD</a>
+            <a href="/logoutadmin">LOGOUT</a>
+        </nav>
+        <br><br>
+
+    </head>
+    <body>
+        <br>
+        <h4>Attendance View</h4>
+        <br>
+        <table border="3">
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>DEPARTMENT</td>
+            <td>ATTENDANCE</td>
+        </tr>
+        {% for row in rows%}
+        <tr>
+            <td>{{row["id"]}}</td>
+            <td>{{row["NAME"]}}</td>
+            <td>{{row["DEPARTMENT"]}}</td>
+            <td>{{row["ATTENDANCE"]}}</td>
+        </tr>
+        {% endfor %}
+        </table>
+        <br><br>
+    </body>
+</html>
