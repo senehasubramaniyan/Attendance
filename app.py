@@ -536,19 +536,19 @@ def contact():
             subject = request.form["subject"]
             message=request.form["message"]
             server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-            server.login("senehababu2001@gmail.com", "Seneha1561")
+            server.login("xxx@gmail.com", "password")
             dd =name+" "+email+" "+" "+message
             head='Subject :{}'.format(subject)
             aa=head+"\n\n"+dd
-            server.sendmail("senehababu2001@gmail.com","senehababu2001@gmail.com", aa)
+            server.sendmail("xxx@gmail.com","xxx.com", aa)
             server.quit()
             server = smtplib.SMTP_SSL("smtp.gmail.com", 465)
-            server.login("senehababu2001@gmail.com", "Seneha1561")
+            server.login("xxx@gmail.com", "password")
             sub="Response"
             hea = 'Subject :{}'.format(sub)
             con="YOUR RESPONSE HAVE BEEN DELIVERED"
             ss=hea+"\n\n"+con
-            server.sendmail("senehababu2001@gmail.com",email,ss)
+            server.sendmail("xxx@gmail.com",email,ss)
             server.quit()
             return render_template("index.html")
         except:
